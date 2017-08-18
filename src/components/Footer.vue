@@ -9,9 +9,13 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+
+@import "../App.scss";
+
 #RaceFooter {
   height: 50px;
-  background-color: #333333;
+  background-color: $dark-color;
 }
+
 </style>
