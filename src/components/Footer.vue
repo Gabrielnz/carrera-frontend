@@ -1,5 +1,5 @@
 <template>
-  <footer id="RaceFooter">
+  <footer id='RaceFooter'>
   </footer>
 </template>
 
@@ -9,9 +9,9 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang='scss' scoped>
 
-@import "../App.scss";
+@import '../App.scss';
 
 #RaceFooter {
   height: 50px;

@@ -3,3 +3,7 @@ $secondary-bg-color: #80C142;
 $white-color: #F0F0F0;
 $gray-color: #CACACA;
 $dark-color: #565956;
+$max-width: 1305px;
+$border: 10px;
+
+.container-fluid { max-width: $max-width; }

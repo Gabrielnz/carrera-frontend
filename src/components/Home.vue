@@ -8,11 +8,16 @@
 
 <script>
 
-import RaceHeader from './Header.vue'
+import RaceHeader from './Header/Main.vue'
 import RaceFooter from './Footer.vue'
 
 export default {
   name: 'race-home',
+  data () {
+    return {
+      navigation: true
+    }
+  },
   components: {
     RaceHeader,
     RaceFooter
@@ -21,8 +26,8 @@ export default {
 
 </script>
 
-<style lang="scss" scoped>
+<style lang='scss' scoped>
 
-@import "../App.scss";
+@import '../App.scss';
 
 </style>
