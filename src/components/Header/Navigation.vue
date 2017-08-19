@@ -55,7 +55,7 @@ nav {
       border-radius: $border;
       padding: 0 15px;
       color: white;
-      font-size: 23px;
+      font-size: 22px;
     }
   }
 }
@@ -68,7 +68,7 @@ nav {
     #navigationList {
 
       a {
-        font-size: 20px;
+        font-size: 18px;
         min-width: 7em;
       }
     }

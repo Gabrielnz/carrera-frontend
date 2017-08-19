@@ -41,7 +41,7 @@ export default {
     }
   },
   methods: {
-    screenChange () {
+    screenSize () {
       if (this.mediaQuery.matches) {
         this.smallScreen = true
       } else {
@@ -58,10 +58,11 @@ export default {
     Navigation
   },
   created: function () {
-    this.mediaQuery.addListener(this.screenChange)
+    this.mediaQuery.addListener(this.screenSize)
+    this.screenSize()
   },
   beforeDestroy: function () {
-    this.mediaQuery.removeListener(this.screenChange)
+    this.mediaQuery.removeListener(this.screenSize)
   }
 }
 
@@ -121,7 +122,7 @@ header {
 @media (max-width: 991px) {
 
   .option {
-    font-size: 1.25em;
+    font-size: 18px;
     padding: 0.02%;
   }
 }
@@ -129,7 +130,7 @@ header {
 /* Small devices */
 @media (max-width: 767px) {
 
-  .option { font-size: 1em; }
+  .option { font-size: 15px; }
 
   header {
 
@@ -155,7 +156,7 @@ header {
 @media (max-width: 575px) {
 
   .option {
-    font-size: 0.75em;
+    font-size: 11px;
     border-radius: 0.65em;
   }
 
