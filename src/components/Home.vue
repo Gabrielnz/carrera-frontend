@@ -19,6 +19,6 @@ export default {
 
 <style lang='scss' scoped>
 
-@import '../App.scss';
+@import './Shared/Theme.scss';
 
 </style>

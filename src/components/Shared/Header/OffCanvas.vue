@@ -28,7 +28,7 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-@import '../../App.scss';
+@import '../Theme.scss';
 
 .active {
   left: 0;

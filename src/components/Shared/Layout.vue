@@ -10,8 +10,8 @@
 
 <script>
 
-import Header from '../Header/Main.vue'
-import Footer from '../Footer/Main.vue'
+import Header from './Header/Main.vue'
+import Footer from './Footer/Main.vue'
 
 export default {
   name: 'layout',
@@ -34,7 +34,7 @@ export default {
 
 <style lang='scss' scoped>
 
-@import '../../App.scss';
+@import './Theme.scss';
 
 .mainContainer {
   padding-top: $vertical-space;

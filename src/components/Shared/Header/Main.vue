@@ -8,11 +8,11 @@
         </button>
         <div class='col-2 col-md-4 d-flex align-items-center justify-content-center'>
           <a href='#'>
-            <img id='raceLogo' src='../../assets/logo.png'>
+            <img id='raceLogo' src='../../../assets/logo.png'>
           </a>
         </div>
         <div class='col-md-4 d-none d-md-flex align-items-center justify-content-center'>
-          <img id='headerLogo' src='../../assets/header-logo.png'>
+          <img id='headerLogo' src='../../../assets/header-logo.png'>
         </div>
         <div class='col-8 col-md-4 d-flex align-items-center justify-content-center'>
           <div id='registerContainer' class='d-flex flex-row-reverse justify-content-around flex-md-column align-items-center justify-md-content-center'>
@@ -82,7 +82,7 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-@import '../../App.scss';
+@import '../Theme.scss';
 
 /* Shared style between the register link and the banner */
 .option {
@@ -140,7 +140,7 @@ header {
 
     @extend .option;
 
-    background-image: url('../../assets/header-banner.png');
+    background-image: url('../../../assets/header-banner.png');
 
     span:last-child { font-weight: bold; }
   }
