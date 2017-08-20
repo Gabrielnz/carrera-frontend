@@ -1,5 +1,4 @@
 <template>
-
 <nav>
   <div class='container-fluid'>
     <div class='row justify-content-center'>
@@ -13,13 +12,11 @@
     </div>
   </div>
 </nav>
-
 </template>
 
 <script>
-
 export default {
-  name: 'race-navigation',
+  name: 'navigation',
   data () {
     return {
       links:
@@ -33,20 +30,20 @@ export default {
     }
   }
 }
-
 </script>
 
 <style lang='scss' scoped>
-
 @import '../../App.scss';
 
 nav {
-  margin: 20px 0;
+  
+  padding-top: 180px + $vertical-space;
 
   #navigationList {
+
     list-style: none;
-    padding-left: 0;
-    margin-bottom: 0;
+    padding: 0;
+    margin: 0;
 
     a {
       background-color: $main-bg-color;
@@ -60,8 +57,7 @@ nav {
   }
 }
 
-/* Large devices */
-@media (max-width: 1199px) {
+@include media-breakpoint-lg {
 
   nav {
 
@@ -75,8 +71,7 @@ nav {
   }
 }
 
-/* Medium devices */
-@media (max-width: 991px) {
+@include media-breakpoint-md {
 
   nav {
 
@@ -88,5 +83,4 @@ nav {
     }
   }
 }
-
 </style>

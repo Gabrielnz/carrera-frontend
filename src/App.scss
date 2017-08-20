@@ -3,7 +3,47 @@ $secondary-bg-color: #80C142;
 $white-color: #F0F0F0;
 $gray-color: #CACACA;
 $dark-color: #565956;
+$shadow-color: #808080;
 $max-width: 1305px;
+$vertical-space: 20px;
+$vertical-space-sm: 1.5em;
 $border: 10px;
+$small-border: 7px;
 
 .container-fluid { max-width: $max-width; }
+
+/* Large devices */
+@mixin media-breakpoint-lg {
+
+  @media (max-width: 1199px) {
+
+    @content;
+  }
+}
+
+/* Medium devices */
+@mixin media-breakpoint-md {
+
+  @media (max-width: 991px) {
+    
+    @content;
+  }
+}
+
+/* Small devices */
+@mixin media-breakpoint-sm {
+
+  @media (max-width: 767px) {
+    
+    @content;
+  }
+}
+
+/* Extra small devices */
+@mixin media-breakpoint-xs {
+
+  @media (max-width: 575px) {
+    
+    @content;
+  }
+}

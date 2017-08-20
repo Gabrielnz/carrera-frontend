@@ -1,26 +1,17 @@
 <template>
-  <div>
-    <RaceHeader/>
-    <div>Cuerpo :DDD</div>
-    <RaceFooter/>
-  </div>
+  <Layout>
+    Hola >:D
+  </Layout>
 </template>
 
 <script>
 
-import RaceHeader from './Header/Main.vue'
-import RaceFooter from './Footer.vue'
+import Layout from './Shared/Layout.vue'
 
 export default {
-  name: 'race-home',
-  data () {
-    return {
-      navigation: true
-    }
-  },
+  name: 'home',
   components: {
-    RaceHeader,
-    RaceFooter
+    Layout
   }
 }
 

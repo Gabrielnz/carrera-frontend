@@ -11,7 +11,6 @@ export default {
 </script>
 
 <style>
-
 a:hover {
   text-decoration: none !important;
 }
@@ -19,5 +18,4 @@ a:hover {
 #app {
   font-family: 'Roboto', sans-serif;
 }
-
 </style>

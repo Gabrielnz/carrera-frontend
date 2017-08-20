@@ -5,13 +5,13 @@
 
 <script>
 export default {
-  name: 'race-footer'
+  name: 'footer'
 }
 </script>
 
 <style lang='scss' scoped>
 
-@import '../App.scss';
+@import '../../App.scss';
 
 #RaceFooter {
   height: 50px;

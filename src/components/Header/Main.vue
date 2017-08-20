@@ -2,8 +2,10 @@
 <div>
   <header class='d-flex align-items-center'>
     <div class='container-fluid'>
-      <div class='row'>
-        <div class='col-2 d-md-none'>Menu</div>
+      <div class='row align-items-center justify-content-end no-gutters'>
+        <button id='offCanvasButton' class='d-flex align-items-center justify-content-center' v-if='showOffCanvas' @click='toggleOffCanvas'>
+          <i class="fa fa-bars" aria-hidden="true"></i>
+        </button>
         <div class='col-2 col-md-4 d-flex align-items-center justify-content-center'>
           <a href='#'>
             <img id='raceLogo' src='../../assets/logo.png'>
@@ -25,37 +27,49 @@
     </div>
   </header>
   <Navigation v-if='showNavigation' />
+  <OffCanvas v-if='showOffCanvas' :active='activeCanvas' />
 </div>
 </template>
 
 <script>
-
 import Navigation from './Navigation.vue'
+import OffCanvas from './OffCanvas.vue'
 
 export default {
-  name: 'race-header',
+  name: 'header',
   data () {
     return {
       smallScreen: false,
+      offCanvas: false,
+      activeCanvas: false,
       mediaQuery: window.matchMedia('(max-width: 767px)')
     }
   },
   methods: {
-    screenSize () {
+    screenSize: function () {
       if (this.mediaQuery.matches) {
         this.smallScreen = true
       } else {
         this.smallScreen = false
       }
+    },
+    toggleOffCanvas: function (ev) {
+      this.activeCanvas = !this.activeCanvas
+
+      this.activeCanvas ? this.$emit('activeCanvas') : this.$emit('inactiveCanvas')
     }
   },
   computed: {
     showNavigation: function () {
       return !this.smallScreen
+    },
+    showOffCanvas: function () {
+      return this.smallScreen
     }
   },
   components: {
-    Navigation
+    Navigation,
+    OffCanvas
   },
   created: function () {
     this.mediaQuery.addListener(this.screenSize)
@@ -65,11 +79,9 @@ export default {
     this.mediaQuery.removeListener(this.screenSize)
   }
 }
-
 </script>
 
 <style lang='scss' scoped>
-
 @import '../../App.scss';
 
 /* Shared style between the register link and the banner */
@@ -82,11 +94,27 @@ export default {
 
 header {
 
+  position: fixed;
+  width: 100%;
   background-color: white;
   height: 180px;
   box-shadow: 0 10px 15px 0 $gray-color;
+  z-index: 2;
 
   span { color: white; }
+
+  #offCanvasButton {
+
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border: 2px solid $dark-color;
+    border-radius: $small-border;
+
+    i {
+      color: $dark-color;
+    }
+  }
 
   #raceLogo { max-width: 150px; }
 
@@ -94,7 +122,7 @@ header {
 
   #registerContainer {
     width: 100%;
-    height: 100%;
+    height: 150px;
   }
 
   #registerLink {
@@ -118,8 +146,7 @@ header {
   }
 }
 
-/* Medium devices */
-@media (max-width: 991px) {
+@include media-breakpoint-md {
 
   .option {
     font-size: 18px;
@@ -127,14 +154,25 @@ header {
   }
 }
 
-/* Small devices */
-@media (max-width: 767px) {
+@include media-breakpoint-sm {
 
   .option { font-size: 15px; }
 
   header {
 
     height: 7.5em;
+
+    #offCanvasButton {
+
+      width: 3.3em;
+      height: 3.3em;
+      position: absolute;
+      left: 1em;
+
+      i {
+        font-size: 35px;
+      }
+    }
 
     #raceLogo {
       width: 5em;
@@ -152,22 +190,20 @@ header {
   }
 }
 
-/* Extra small devices */
-@media (max-width: 575px) {
+@include media-breakpoint-xs {
 
   .option {
     font-size: 11px;
-    border-radius: 0.65em;
+    border-radius: $small-border;
   }
 
   header {
 
-    #raceLogo { width: 4.5em; }
+    #raceLogo { width: 3em; }
 
     #registerLink { width: 8.5em; }
 
     #collectedBanner { width: 10em; }
   }
 }
-
 </style>
