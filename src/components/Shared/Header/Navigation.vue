@@ -17,23 +17,12 @@
 <script>
 export default {
   name: 'navigation',
-  data () {
-    return {
-      links:
-      [
-        { id: 'link1', url: '/', name: 'Home' },
-        { id: 'link2', url: '#', name: 'Corredores' },
-        { id: 'link3', url: '#', name: '¿Cómo funciona?' },
-        { id: 'link4', url: '#', name: 'Causa' },
-        { id: 'link5', url: '#', name: 'Inicio Sesión' }
-      ]
-    }
-  }
+  props: ['links']
 }
 </script>
 
 <style lang='scss' scoped>
-@import '../Theme.scss';
+@import '../Layout/Theme.scss';
 
 nav {
   
@@ -65,7 +54,7 @@ nav {
 
       a {
         font-size: 18px;
-        min-width: 7em;
+        min-width: 8em;
       }
     }
   }
@@ -78,7 +67,7 @@ nav {
     #navigationList {
 
       a {
-        font-size: 15px;
+        font-size: 14px;
       }
     }
   }

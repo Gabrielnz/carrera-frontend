@@ -11,24 +11,12 @@
 <script>
 export default {
   name: 'offcanvas',
-  props: ['active'],
-  data () {
-    return {
-      links:
-      [
-        { id: 'link1', url: '/', name: 'Home' },
-        { id: 'link2', url: '#', name: 'Corredores' },
-        { id: 'link3', url: '#', name: '¿Cómo funciona?' },
-        { id: 'link4', url: '#', name: 'Causa' },
-        { id: 'link5', url: '#', name: 'Inicio Sesión' }
-      ]
-    }
-  }
+  props: ['active', 'links']
 }
 </script>
 
 <style lang='scss' scoped>
-@import '../Theme.scss';
+@import '../Layout/Theme.scss';
 
 .active {
   left: 0;

@@ -11,7 +11,7 @@ export default {
 
 <style lang='scss' scoped>
 
-@import '../Theme.scss';
+@import '../Layout/Theme.scss';
 
 #RaceFooter {
   height: 50px;

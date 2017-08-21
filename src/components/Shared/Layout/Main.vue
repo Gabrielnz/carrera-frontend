@@ -1,17 +1,19 @@
 <template>
   <div>
-    <Header v-on:activeCanvas='activeCanvas' v-on:inactiveCanvas='inactiveCanvas'/>
+    <RaceHeader v-on:activeCanvas='activeCanvas' v-on:inactiveCanvas='inactiveCanvas' />
     <div class='mainContainer' :class='{lowBrightness}'>
-      <slot></slot>
+      <div class='container-fluid'>
+        <slot></slot>
+      </div>
     </div>
-    <Footer :class='{lowBrightness}'/>
+    <RaceFooter :class='{lowBrightness}' />
   </div>
 </template>
 
 <script>
 
-import Header from './Header/Main.vue'
-import Footer from './Footer/Main.vue'
+import RaceHeader from '../Header/Main.vue'
+import RaceFooter from '../Footer/Main.vue'
 
 export default {
   name: 'layout',
@@ -25,8 +27,8 @@ export default {
     inactiveCanvas: function (ev) { this.lowBrightness = false }
   },
   components: {
-    Header,
-    Footer
+    RaceHeader,
+    RaceFooter
   }
 }
 
@@ -41,13 +43,18 @@ export default {
   height: 1000px;
   background-color: white;
   transition: 0.3s;
+  background-image: url('./assets/main-section-bg.png');
+  background-size: 100%;
 }
 
 .lowBrightness { filter: brightness(75%); }
 
 @include media-breakpoint-sm {
 
-  .mainContainer { padding-top: 7.5em + $vertical-space-sm; }
+  .mainContainer {
+    padding-top: 7.5em + $vertical-space-sm;
+    background-image: initial;
+  }
 }
 
 </style>

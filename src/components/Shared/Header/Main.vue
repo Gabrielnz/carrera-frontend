@@ -8,11 +8,11 @@
         </button>
         <div class='col-2 col-md-4 d-flex align-items-center justify-content-center'>
           <a href='#'>
-            <img id='raceLogo' src='../../../assets/logo.png'>
+            <img id='raceLogo' src='/static/assets/logo.png'>
           </a>
         </div>
         <div class='col-md-4 d-none d-md-flex align-items-center justify-content-center'>
-          <img id='headerLogo' src='../../../assets/header-logo.png'>
+          <img id='headerLogo' src='./assets/header-logo.png'>
         </div>
         <div class='col-8 col-md-4 d-flex align-items-center justify-content-center'>
           <div id='registerContainer' class='d-flex flex-row-reverse justify-content-around flex-md-column align-items-center justify-md-content-center'>
@@ -26,8 +26,8 @@
       </div>
     </div>
   </header>
-  <Navigation v-if='showNavigation' />
-  <OffCanvas v-if='showOffCanvas' :active='activeCanvas' />
+  <Navigation v-if='showNavigation' :links='links' />
+  <OffCanvas v-if='showOffCanvas' :active='activeCanvas' :links='links' />
 </div>
 </template>
 
@@ -37,12 +37,20 @@ import OffCanvas from './OffCanvas.vue'
 
 export default {
   name: 'header',
-  data () {
+  data: function () {
     return {
       smallScreen: false,
       offCanvas: false,
       activeCanvas: false,
-      mediaQuery: window.matchMedia('(max-width: 767px)')
+      mediaQuery: window.matchMedia('(max-width: 767px)'),
+      links:
+      [
+        { id: 'link1', url: '/', name: 'Home' },
+        { id: 'link2', url: '#', name: 'Corredores' },
+        { id: 'link3', url: '#', name: '¿Cómo funciona?' },
+        { id: 'link4', url: '#', name: 'Causa' },
+        { id: 'link5', url: '#', name: 'Inicio Sesión' }
+      ]
     }
   },
   methods: {
@@ -82,7 +90,7 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-@import '../Theme.scss';
+@import '../Layout/Theme.scss';
 
 /* Shared style between the register link and the banner */
 .option {
@@ -140,7 +148,7 @@ header {
 
     @extend .option;
 
-    background-image: url('../../../assets/header-banner.png');
+    background-image: url('./assets/header-banner.png');
 
     span:last-child { font-weight: bold; }
   }
@@ -180,7 +188,6 @@ header {
     }
 
     #registerContainer {
-      margin: 0 0.5em;
       height: 3.5em;
     }
 
