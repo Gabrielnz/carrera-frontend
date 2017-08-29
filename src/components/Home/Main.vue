@@ -1,12 +1,14 @@
 <template>
   <Layout>
     <Carousel :slides='slides' />
+    <TitleSection />
   </Layout>
 </template>
 
 <script>
 
 import Layout from '../Shared/Layout/Main.vue'
+import TitleSection from '../Shared/Title/Main.vue'
 import Carousel from './Carousel.vue'
 
 export default {
@@ -32,7 +34,8 @@ export default {
   },
   components: {
     Layout,
-    Carousel
+    Carousel,
+    TitleSection
   }
 }
 

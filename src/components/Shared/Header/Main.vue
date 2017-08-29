@@ -8,7 +8,7 @@
         </button>
         <div class='col-2 col-md-4 d-flex align-items-center justify-content-center'>
           <a href='#'>
-            <img id='raceLogo' src='/static/assets/logo.png'>
+            <img id='raceLogo' src='./assets/logo.png'>
           </a>
         </div>
         <div class='col-md-4 d-none d-md-flex align-items-center justify-content-center'>
