@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <Carousel :slides='slides' />
-    <TitleSection />
+    <TitleSection :text='title' />
   </Layout>
 </template>
 
@@ -9,12 +9,13 @@
 
 import Layout from '../Shared/Layout/Main.vue'
 import TitleSection from '../Shared/Title/Main.vue'
-import Carousel from './Carousel.vue'
+import Carousel from '../Shared/Carousel/Main.vue'
 
 export default {
   name: 'home',
   data: function () {
     return {
+      title: 'TOP 10 CORREDORES',
       slides:
       [
         {

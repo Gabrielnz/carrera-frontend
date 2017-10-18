@@ -4,7 +4,7 @@
       <div id='titleContainer' class='row justify-content-between no-gutters'>
         <div id='main' class='d-flex align-items-center justify-content-start'>
           <div id='titleBar'></div>
-          <h3>TOP 10 DE CORREDORES</h3>
+          <h3>{{ text }}</h3>
         </div>
         <div class='col-2 col-md-1 d-flex align-items-center justify-content-between'>
           <img src='./assets/title-icon.png'>
@@ -16,7 +16,8 @@
 
 <script>
 export default {
-  name: 'title'
+  name: 'title',
+  props: ['text']
 }
 </script>
 
@@ -39,7 +40,6 @@ export default {
     }
 
     #titleBar {
-
       width: 30px;
       height: 100%;
       background-color: $main-bg-color;

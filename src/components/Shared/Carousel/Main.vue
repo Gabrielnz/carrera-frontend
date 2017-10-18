@@ -34,14 +34,13 @@ export default {
 
 <style lang='scss' scoped>
 
-@import '../Shared/Layout/Theme.scss';
+@import '../Layout/Theme.scss';
 
 #carousel {
 
   img {
     height: 600px;
     object-fit: cover;
-
   }
 }
 
